@@ -3,6 +3,7 @@ from django.utils import timezone
 from datacenter.models import Passcard, Visit
 from datetime import timedelta
 
+
 def get_duration(entered_at, leaved_at):
     """Возвращает продолжительность визита в секундах."""
     if leaved_at is None:
@@ -10,12 +11,14 @@ def get_duration(entered_at, leaved_at):
     duration = leaved_at - entered_at
     return duration
 
+
 def format_duration(duration):
     """Форматирует продолжительность в строку 'HH:MM:SS'."""
     total_seconds = int(duration.total_seconds())
     hours, remainder = divmod(total_seconds, 3600)
     minutes, seconds = divmod(remainder, 60)
     return f'{hours:02}:{minutes:02}:{seconds:02}'
+
 
 def passcard_info_view(request, passcode):
     passcard = get_object_or_404(Passcard, passcode=passcode)
