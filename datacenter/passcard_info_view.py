@@ -1,24 +1,8 @@
+from datetime import timedelta  # Добавьте этот импорт
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from datacenter.models import Passcard, Visit
-from datetime import timedelta
-
-
-def get_duration(entered_at, leaved_at):
-    """Возвращает продолжительность визита в секундах."""
-    if leaved_at is None:
-        leaved_at = timezone.now()
-    duration = leaved_at - entered_at
-    return duration
-
-
-def format_duration(duration):
-    """Форматирует продолжительность в строку 'HH:MM:SS'."""
-    total_seconds = int(duration.total_seconds())
-    hours, remainder = divmod(total_seconds, 3600)
-    minutes, seconds = divmod(remainder, 60)
-    return f'{hours:02}:{minutes:02}:{seconds:02}'
-
+from datacenter.utils import get_duration, format_duration
 
 def passcard_info_view(request, passcode):
     passcard = get_object_or_404(Passcard, passcode=passcode)
