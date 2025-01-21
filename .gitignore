@@ -1,5 +1,6 @@
 __pycache__/
 .venv/
+.idea/
 *.sqlite3
 *.swp
 static/
@@ -7,10 +8,9 @@ media/
 .coverage
 htmlcov/
 .pytest_cache/
-.idea/
-*.mo
-*.pot
 .tox/
 .env
+
+
 
 
