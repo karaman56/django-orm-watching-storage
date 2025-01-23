@@ -1,13 +1,12 @@
 import os
 from environs import Env
 
-
 env = Env()
 env.read_env()
 
-
 DEBUG = env.bool("DEBUG", default=False)
 
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["localhost", "127.0.0.1"])
 
 DATABASES = {
     'default': {
@@ -26,7 +25,6 @@ SECRET_KEY = env("SECRET_KEY", default='REPLACE_ME')
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
