@@ -19,12 +19,9 @@ DATABASES = {
     }
 }
 
-INSTALLED_APPS = ['datacenter']
-
 SECRET_KEY = env("SECRET_KEY", default='REPLACE_ME')
 
 ROOT_URLCONF = 'project.urls'
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
@@ -45,18 +42,18 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
+INSTALLED_APPS = ['datacenter']
 
-DEBUG = True
 
-ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATES = [
-{
-'BACKEND': 'django.template.backends.django.DjangoTemplates',
-'DIRS': [os.path.join(BASE_DIR, 'templates')],
-'APP_DIRS': True,
-},
-]
+
+
+
+
+
+
+
+
+
+
