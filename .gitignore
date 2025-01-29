@@ -16,6 +16,10 @@ htmlcov/
 .vscode/
 Thumbs.db
 .DS_Store
+poetry.lock
+pyproject.toml
+
+
 
 
 
